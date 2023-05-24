@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/banao-fullstack/static/css/main.0fff2389.css",
-    "main.js": "/banao-fullstack/static/js/main.86074c90.js",
+    "main.js": "/banao-fullstack/static/js/main.6e9ad972.js",
     "static/js/787.5e489101.chunk.js": "/banao-fullstack/static/js/787.5e489101.chunk.js",
     "static/media/hero-image2.png": "/banao-fullstack/static/media/hero-image2.3ceff31d460b2bea6868.png",
     "static/media/hero-image.png": "/banao-fullstack/static/media/hero-image.ece2270e311dc99307f9.png",
@@ -9,11 +9,11 @@
     "static/media/nav-title.png": "/banao-fullstack/static/media/nav-title.87d9f76600596dc20af6.png",
     "index.html": "/banao-fullstack/index.html",
     "main.0fff2389.css.map": "/banao-fullstack/static/css/main.0fff2389.css.map",
-    "main.86074c90.js.map": "/banao-fullstack/static/js/main.86074c90.js.map",
+    "main.6e9ad972.js.map": "/banao-fullstack/static/js/main.6e9ad972.js.map",
     "787.5e489101.chunk.js.map": "/banao-fullstack/static/js/787.5e489101.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0fff2389.css",
-    "static/js/main.86074c90.js"
+    "static/js/main.6e9ad972.js"
   ]
 }
