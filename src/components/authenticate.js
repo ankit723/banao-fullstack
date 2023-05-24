@@ -32,7 +32,7 @@ export function Auth({setLoginUser}) {
     const register=()=>{
         const {username, email, password, reEnterPassword}= user
         if (username && email && password && (password===reEnterPassword)){
-            axios.post("http://localhost:9002/register", user)
+            axios.post("https://atg-backend-q7x9.onrender.com/register", user)
             .then( res => alert(res.data.message))
         } else{
             alert('invalid input')
@@ -58,7 +58,7 @@ export function Auth({setLoginUser}) {
     }
     
     const forgot=()=>{
-        axios.post("http://localhost:9002/forgot", {username:user.username, email:user.email})
+        axios.post("https://atg-backend-q7x9.onrender.com/forgot", {username:user.username, email:user.email})
         .then(res=>{
             const password=res.data.pass;
             setForgetPass(password)

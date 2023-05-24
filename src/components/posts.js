@@ -10,8 +10,8 @@ const PostApp = ({setLoginUser, username}) => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        // const checker = await axios.post("http://localhost:9002/post/item", {userId:setLoginUser})
-        const response = await fetch(`http://localhost:9002/post?userId=${setLoginUser}`);
+        // const checker = await axios.post("https://atg-backend-q7x9.onrender.com/post/item", {userId:setLoginUser})
+        const response = await fetch(`https://atg-backend-q7x9.onrender.com/post?userId=${setLoginUser}`);
         const data = await response.json();
         setPosts(data);
       } catch (error) {
@@ -25,7 +25,7 @@ const PostApp = ({setLoginUser, username}) => {
   useEffect(() => {
     const otherfetchPosts = async () => {
       try {
-        const response = await fetch(`http://localhost:9002/otherpost?userId=${setLoginUser}`);
+        const response = await fetch(`https://atg-backend-q7x9.onrender.com/otherpost?userId=${setLoginUser}`);
         const data = await response.json();
         othersetPosts(data);
       } catch (error) {
@@ -53,7 +53,7 @@ const PostApp = ({setLoginUser, username}) => {
 
   const handleLike = async (itemId) => {
     try {
-      await axios.put(`http://localhost:9002/api/posts/${itemId}/like`);
+      await axios.put(`https://atg-backend-q7x9.onrender.com/api/posts/${itemId}/like`);
       fetchItems(); // Update the items list after a like
       window.location.reload()
     } catch (error) {
@@ -64,7 +64,7 @@ const PostApp = ({setLoginUser, username}) => {
 
   const handleDislike = async (itemId) => {
     try {
-      await axios.put(`http://localhost:9002/api/posts/${itemId}/dislike`);
+      await axios.put(`https://atg-backend-q7x9.onrender.com/api/posts/${itemId}/dislike`);
       fetchItems(); // Update the items list after a dislike
       window.location.reload()
     } catch (error) {
@@ -78,7 +78,7 @@ const PostApp = ({setLoginUser, username}) => {
       const title = prompt('Enter a new POST item:');
       if (!title) return;
 
-      const response = await fetch('http://localhost:9002/post', {
+      const response = await fetch('https://atg-backend-q7x9.onrender.com/post', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -101,7 +101,7 @@ const PostApp = ({setLoginUser, username}) => {
 
   const deletePost= (id)=>{
     console.log(id)
-    axios.post("http://localhost:9002/postdelete", {postId:id})
+    axios.post("https://atg-backend-q7x9.onrender.com/postdelete", {postId:id})
     window.location.reload()
   }
   
@@ -109,7 +109,7 @@ const PostApp = ({setLoginUser, username}) => {
   const updatePost= (id)=>{
     console.log(id)
     let newtitle=prompt("Enter the new Post")
-    axios.post("http://localhost:9002/postupdate", {postId:id, newtitle:newtitle})
+    axios.post("https://atg-backend-q7x9.onrender.com/postupdate", {postId:id, newtitle:newtitle})
     window.location.reload()
   }
 
