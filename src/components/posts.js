@@ -53,7 +53,7 @@ const PostApp = ({setLoginUser, username}) => {
 
   const handleLike = async (itemId) => {
     try {
-      await axios.put(`https://atg-backend-q7x9.onrender.com/api/posts/${itemId}/like`);
+      await axios.post(`https://atg-backend-q7x9.onrender.com/api/posts/${itemId}/like`);
       fetchItems(); // Update the items list after a like
       window.location.reload()
     } catch (error) {
@@ -64,7 +64,7 @@ const PostApp = ({setLoginUser, username}) => {
 
   const handleDislike = async (itemId) => {
     try {
-      await axios.put(`https://atg-backend-q7x9.onrender.com/api/posts/${itemId}/dislike`);
+      await axios.post(`https://atg-backend-q7x9.onrender.com/api/posts/${itemId}/dislike`);
       fetchItems(); // Update the items list after a dislike
       window.location.reload()
     } catch (error) {
@@ -132,7 +132,9 @@ const PostApp = ({setLoginUser, username}) => {
         <h1 style={{fontSize:"3rem", color:"#27374D"}}>Other Posts</h1>
         {otherposts && otherposts.length > 0 ? (
           otherposts.map((post) => 
-          <li key={post._id}><Post2 title={post.title}/></li>)
+          <li key={post._id}><Post2 title={post.title}/>
+          <button className='btn btn-primary mx-2' onClick={() => handleLike(post._id)}>Like</button><span>Likes: {post.likes}</span>
+          <button className='btn btn-secondary mx-2' onClick={() => handleDislike(post._id)}>Dislike</button> <span>Dislikes: {post.dislikes}</span></li>)
         ) : (
           <li style={{fontSize:"2rem", display:"flex", justifyContent:"center",marginTop:"2rem"}}>No Post items found.Why Dont you Post Some !!</li>
         )}
