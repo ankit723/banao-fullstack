@@ -43,7 +43,7 @@ const PostApp = ({setLoginUser, username}) => {
 
   const fetchItems = async () => {
     try {
-      const response = await axios.get('/api/posts');
+      const response = await axios.get('https://atg-backend-q7x9.onrender.com/api/posts');
       setItems(response.data);
     } catch (error) {
       console.error('Error fetching posts:', error);
